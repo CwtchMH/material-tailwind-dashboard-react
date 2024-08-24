@@ -2,26 +2,28 @@ import {
   BanknotesIcon,
   UserPlusIcon,
   UsersIcon,
-  ChartBarIcon,
+  SunIcon
 } from "@heroicons/react/24/solid";
+import OpacityIcon from '@mui/icons-material/Opacity';
+import ThermostatIcon from '@mui/icons-material/Thermostat';
 
 export const statisticsCardsData = [
   {
-    color: "gray",
-    icon: BanknotesIcon,
-    title: "Today's Money",
-    value: "$53k",
+    color: "yellow",
+    icon: SunIcon,
+    title: "Light",
+    value: "70%",
     footer: {
       color: "text-green-500",
-      value: "+55%",
+      value: "+5%",
       label: "than last week",
     },
   },
   {
-    color: "gray",
-    icon: UsersIcon,
-    title: "Today's Users",
-    value: "2,300",
+    color: "blue",
+    icon: OpacityIcon,
+    title: "Humidity",
+    value: "20%",
     footer: {
       color: "text-green-500",
       value: "+3%",
@@ -29,27 +31,16 @@ export const statisticsCardsData = [
     },
   },
   {
-    color: "gray",
-    icon: UserPlusIcon,
-    title: "New Clients",
-    value: "3,462",
+    color: "red",
+    icon: ThermostatIcon,
+    title: "Temperature",
+    value: "30°C",
     footer: {
       color: "text-red-500",
-      value: "-2%",
+      value: "-2°C",
       label: "than yesterday",
     },
-  },
-  {
-    color: "gray",
-    icon: ChartBarIcon,
-    title: "Sales",
-    value: "$103,430",
-    footer: {
-      color: "text-green-500",
-      value: "+5%",
-      label: "than yesterday",
-    },
-  },
+  }
 ];
 
 export default statisticsCardsData;

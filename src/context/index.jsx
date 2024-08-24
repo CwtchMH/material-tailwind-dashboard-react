@@ -24,6 +24,15 @@ export function reducer(state, action) {
     case "OPEN_CONFIGURATOR": {
       return { ...state, openConfigurator: action.value };
     }
+    case "OPEN_FAN": {
+      return { ...state, statusFan: action.value };
+    }
+    case "OPEN_AC": {
+      return { ...state, statusAC: action.value };
+    }
+    case "OPEN_LIGHT": {
+      return { ...state, statusLight: action.value };
+    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -32,12 +41,15 @@ export function reducer(state, action) {
 
 export function MaterialTailwindControllerProvider({ children }) {
   const initialState = {
-    openSidenav: false,
+    openSidenav: true,
     sidenavColor: "dark",
     sidenavType: "white",
     transparentNavbar: true,
-    fixedNavbar: false,
+    fixedNavbar: true,
     openConfigurator: false,
+    statusFan: false,
+    statusAC: false,
+    statusLight: false,
   };
 
   const [controller, dispatch] = React.useReducer(reducer, initialState);
@@ -83,3 +95,9 @@ export const setFixedNavbar = (dispatch, value) =>
   dispatch({ type: "FIXED_NAVBAR", value });
 export const setOpenConfigurator = (dispatch, value) =>
   dispatch({ type: "OPEN_CONFIGURATOR", value });
+export const setOpenFan = (dispatch, value) =>
+  dispatch({ type: "OPEN_FAN", value });
+export const setOpenAC = (dispatch, value) =>
+  dispatch({ type: "OPEN_AC", value });
+export const setOpenLight = (dispatch, value) =>
+  dispatch({ type: "OPEN_LIGHT", value });

@@ -1,11 +1,11 @@
 export const chartsConfig = {
   chart: {
     toolbar: {
-      show: false,
+      show: true,
     },
   },
   title: {
-    show: "",
+    show: "Sensor Data Histogram",
   },
   dataLabels: {
     enabled: false,
@@ -35,6 +35,7 @@ export const chartsConfig = {
         fontWeight: 300,
       },
     },
+
   },
   grid: {
     show: true,

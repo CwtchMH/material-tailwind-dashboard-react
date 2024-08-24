@@ -1,44 +1,29 @@
 import { chartsConfig } from "@/configs";
 
-const websiteViewsChart = {
-  type: "bar",
-  height: 220,
-  series: [
-    {
-      name: "Views",
-      data: [50, 20, 10, 22, 50, 10, 40],
-    },
-  ],
-  options: {
-    ...chartsConfig,
-    colors: "#388e3c",
-    plotOptions: {
-      bar: {
-        columnWidth: "16%",
-        borderRadius: 5,
-      },
-    },
-    xaxis: {
-      ...chartsConfig.xaxis,
-      categories: ["M", "T", "W", "T", "F", "S", "S"],
-    },
-  },
-};
-
 const dailySalesChart = {
   type: "line",
-  height: 220,
+  height: 390,
   series: [
     {
-      name: "Sales",
-      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+      name: "Light",
+      data: [70, 40, 68, 79, 60, 26, 59, 60, 80, 60, 70, 75, 69, 80, 60, 70, 75, 69, 80, 60, 70, 75, 69, 80, 60],
     },
+    {
+      name: "Temperature",
+      data: [20, 23, 25, 21, 30, 32, 37, 35, 40, 34, 30, 33, 30, 35, 40, 34, 30, 33, 30, 35, 40, 34, 30, 33, 30],
+      color: "#ff0000",
+    },
+    {
+      name: "Humidity",
+      data: [30, 40, 35, 28, 23, 12, 14, 15, 15, 13, 28, 23, 12, 14, 15, 12, 14, 15, 15, 13,28, 23, 12, 14, 15],
+      color: "#ff8b00",
+    }
   ],
   options: {
     ...chartsConfig,
     colors: ["#0288d1"],
     stroke: {
-      lineCap: "round",
+      curve: "smooth",
     },
     markers: {
       size: 5,
@@ -46,86 +31,46 @@ const dailySalesChart = {
     xaxis: {
       ...chartsConfig.xaxis,
       categories: [
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
       ],
     },
   },
 };
 
-const completedTaskChart = {
-  type: "line",
-  height: 220,
-  series: [
-    {
-      name: "Sales",
-      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-    },
-  ],
-  options: {
-    ...chartsConfig,
-    colors: ["#388e3c"],
-    stroke: {
-      lineCap: "round",
-    },
-    markers: {
-      size: 5,
-    },
-    xaxis: {
-      ...chartsConfig.xaxis,
-      categories: [
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-    },
-  },
-};
-const completedTasksChart = {
-  ...completedTaskChart,
-  series: [
-    {
-      name: "Tasks",
-      data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-    },
-  ],
-};
+
 
 export const statisticsChartsData = [
   {
     color: "white",
-    title: "Website View",
-    description: "Last Campaign Performance",
-    footer: "campaign sent 2 days ago",
-    chart: websiteViewsChart,
-  },
-  {
-    color: "white",
-    title: "Daily Sales",
-    description: "15% increase in today sales",
+    title: "Sensor Histogram",
+    description: "#Track for the best moment",
     footer: "updated 4 min ago",
     chart: dailySalesChart,
-  },
-  {
-    color: "white",
-    title: "Completed Tasks",
-    description: "Last Campaign Performance",
-    footer: "just updated",
-    chart: completedTasksChart,
-  },
+  }
 ];
 
 export default statisticsChartsData;
